@@ -1,0 +1,176 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: #111418; /* hitam kebiruan lembut */
+    color: #d8d8d8; /* abu terang lembut */
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "sidebar content"
+        "footer footer";
+}
+
+/* === AREA GRID === */
+header {
+    grid-area: header;
+    text-align: center;
+    background-color: #1a1d22; 
+    color: #e5e5e5;
+    padding: 25px 15px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #2a2f36;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+aside {
+    grid-area: sidebar;
+    background-color: #16191d;
+    padding: 20px;
+    border-right: 1px solid #2a2f36;
+}
+main {
+    grid-area: content;
+    padding: 30px;
+}
+footer {
+    grid-area: footer;
+    text-align: center;
+    background-color: #1a1d22;
+    color: #a0a0a0;
+    padding: 15px;
+    border-top: 1px solid #2a2f36;
+}
+
+/* === NAVIGASI === */
+nav a {
+    display: block;
+    margin: 10px 0;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #b8c2d0; /* abu keperakan */
+    font-weight: 500;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s;
+}
+nav a:hover {
+    background-color: #22262d;
+    color: #7aa7ff; /* biru lembut */
+}
+
+/* === KONTEN === */
+section {
+    background: #181b20;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.35);
+    border: 1px solid #2a2f36;
+    margin-bottom: 25px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.45);
+}
+
+/* === FLEXBOX: BIODATA === */
+#biodata {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+#biodata img {
+    border-radius: 10px;
+    border: 2px solid #2a2f36;
+    width: 180px;
+}
+.biodata-teks {
+    flex: 1;
+}
+
+/* === FORM === */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+}
+form input, form textarea {
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    border: 1px solid #2a2f36;
+    border-radius: 6px;
+    background-color: #1c1f24;
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #5c85ff;
+    background-color: #21252b;
+}
+form input[type="submit"] {
+    background-color: #5c85ff; /* biru elegan */
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+form input[type="submit"]:hover {
+    background-color: #6f94ff;
+    transform: scale(1.02);
+}
+
+/* === TABEL === */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 700px;
+    margin: 10px 0;
+    border: 1px solid #2a2f36;
+}
+th, td {
+    border: 1px solid #2a2f36;
+    padding: 12px;
+    text-align: left;
+}
+th {
+    background-color: #1d2025;
+    color: #a9c4ff;
+    text-align: center;
+}
+tr:nth-child(even) {
+    background-color: #191c21;
+}
+tr:hover {
+    background-color: #22252c;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "content"
+            "sidebar"
+            "footer";
+    }
+    aside {
+        border-right: none;
+        border-top: 1px solid #2a2f36;
+    }
+}
